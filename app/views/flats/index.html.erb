@@ -1,0 +1,18 @@
+<div>
+<div class = "row col-12">
+  <h1>Flats in London (<%= (@flats.count) %>)</h1>
+</div>
+  <div class="cards-container pt-3">
+    <ul>
+    <% @flats.each do |flat| %>
+    <div class="card">
+      <li><%= flat.name %></li>
+      <li><%= flat.address %></li>
+      <i class="fa-solid fa-sterling-sign"><%= flat.price_per_night %></i>
+      <i class="fa-solid fa-person"><%= flat.number_of_guests %></i>
+      <%= link_to "more info", flat_path(flat) %>
+    </div>
+    <% end %>
+    </ul>
+  </div>
+</div>
